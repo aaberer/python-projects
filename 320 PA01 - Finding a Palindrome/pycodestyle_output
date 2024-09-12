@@ -1,0 +1,63 @@
+./pycodestyle.py:66:36: W504 line break after binary operator
+./pycodestyle.py:287:46: W504 line break after binary operator
+./pycodestyle.py:377:41: W504 line break after binary operator
+./pycodestyle.py:384:75: W504 line break after binary operator
+./pycodestyle.py:389:50: W504 line break after binary operator
+./pycodestyle.py:390:58: W504 line break after binary operator
+./pycodestyle.py:412:24: W504 line break after binary operator
+./pycodestyle.py:413:30: W504 line break after binary operator
+./pycodestyle.py:414:45: W504 line break after binary operator
+./pycodestyle.py:492:36: W504 line break after binary operator
+./pycodestyle.py:493:44: W504 line break after binary operator
+./pycodestyle.py:494:48: W504 line break after binary operator
+./pycodestyle.py:495:47: W504 line break after binary operator
+./pycodestyle.py:496:70: W504 line break after binary operator
+./pycodestyle.py:497:69: W504 line break after binary operator
+./pycodestyle.py:633:61: W504 line break after binary operator
+./pycodestyle.py:651:49: W504 line break after binary operator
+./pycodestyle.py:682:25: W504 line break after binary operator
+./pycodestyle.py:683:67: W504 line break after binary operator
+./pycodestyle.py:770:39: W504 line break after binary operator
+./pycodestyle.py:771:26: W504 line break after binary operator
+./pycodestyle.py:772:31: W504 line break after binary operator
+./pycodestyle.py:773:64: W504 line break after binary operator
+./pycodestyle.py:775:60: W504 line break after binary operator
+./pycodestyle.py:777:46: W504 line break after binary operator
+./pycodestyle.py:779:43: W504 line break after binary operator
+./pycodestyle.py:781:37: W504 line break after binary operator
+./pycodestyle.py:875:44: W504 line break after binary operator
+./pycodestyle.py:876:47: W504 line break after binary operator
+./pycodestyle.py:913:66: W504 line break after binary operator
+./pycodestyle.py:938:51: W504 line break after binary operator
+./pycodestyle.py:940:51: W504 line break after binary operator
+./pycodestyle.py:953:46: W504 line break after binary operator
+./pycodestyle.py:955:51: W504 line break after binary operator
+./pycodestyle.py:1219:44: W504 line break after binary operator
+./pycodestyle.py:1220:44: W504 line break after binary operator
+./pycodestyle.py:1221:44: W504 line break after binary operator
+./pycodestyle.py:1295:35: W504 line break after binary operator
+./pycodestyle.py:1351:66: W504 line break after binary operator
+./pycodestyle.py:1352:35: W504 line break after binary operator
+./pycodestyle.py:1385:69: W504 line break after binary operator
+./pycodestyle.py:1386:28: W504 line break after binary operator
+./pycodestyle.py:1387:35: W504 line break after binary operator
+./pycodestyle.py:1423:55: W504 line break after binary operator
+./pycodestyle.py:1548:40: W504 line break after binary operator
+./pycodestyle.py:1549:29: W504 line break after binary operator
+./pycodestyle.py:1571:40: W504 line break after binary operator
+./pycodestyle.py:1572:32: W504 line break after binary operator
+./pycodestyle.py:1573:76: W504 line break after binary operator
+./pycodestyle.py:1574:62: W504 line break after binary operator
+./pycodestyle.py:1685:46: W504 line break after binary operator
+./pycodestyle.py:1689:46: W504 line break after binary operator
+./pycodestyle.py:1948:68: W504 line break after binary operator
+./pycodestyle.py:2041:72: W504 line break after binary operator
+./pycodestyle.py:2245:10: E225 missing whitespace around operator
+./pycodestyle.py:2245:36: E231 missing whitespace after ','
+./pycodestyle.py:2382:60: W504 line break after binary operator
+./pycodestyle.py:2412:54: W504 line break after binary operator
+./pycodestyle.py:2660:9: E265 block comment should start with '# '
+./pycodestyle.py:2663:1: E302 expected 2 blank lines, found 1
+./pycodestyle.py:2664:13: E225 missing whitespace around operator
+./pycodestyle.py:2664:32: E226 missing whitespace around arithmetic operator
+./pycodestyle.py:2667:1: E305 expected 2 blank lines after class or function definition, found 1
