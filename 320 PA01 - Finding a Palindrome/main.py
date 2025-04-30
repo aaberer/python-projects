@@ -2,7 +2,7 @@
 
 # An example import. Delete or replace as desired. Be careful with what libraries you use:
 # Non-default python libraries may not work in Zybooks.
-import math 
+import math
 
 # Subroutines if any, go here
 
@@ -22,10 +22,10 @@ def find_palindrome(pattern):
 
     if len(pattern) <= 2:
         return None
-    
+
     if pattern is None:
         return None
-    
+
     for i in range(len(pattern)):
         shift_pattern = pattern[:i] + pattern[i + 1:]
         if is_palindrome(shift_pattern):
@@ -44,7 +44,7 @@ def type_check(check):
 # t[start:end] result tuple starting with t[start] and ending with t[end-1].
 # increment t[start:end:2] selects every other element of the list, beginning with start
 # for e in reverse(t): iterator like range and does not actually reverse the values in t
-def is_palindrome(pattern): 
+def is_palindrome(pattern):
     if pattern is None:
         return False
     else:

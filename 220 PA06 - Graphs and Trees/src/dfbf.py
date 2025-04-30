@@ -53,98 +53,106 @@ END DFS
 
 import sys
 
-cyclic = False #keeping track in dfs whether a cycle was found
+cyclic = False  # keeping track in dfs whether a cycle was found
+
 
 def read(fnm):
-  """  
-  read file fnm into dictionary
-  each line has a nodeName followed by its adjacent nodeNames
-  """
-  f = open(fnm)
-  gr = {} #graph represented by dictionary
-  for line in f:
-    l =line.strip().split(" ")
-    # ignore empty lines
-    if l==['']:continue
-    # dictionary: key: nodeName  value: (color, adjList of names)
-    gr[l[0]]= ('white',l[1:]) 
-  return gr
+    """  
+    read file fnm into dictionary
+    each line has a nodeName followed by its adjacent nodeNames
+    """
+    f = open(fnm)
+    gr = {}  # graph represented by dictionary
+    for line in f:
+        l = line.strip().split(" ")
+        # ignore empty lines
+        if l == ['']:
+            continue
+        # dictionary: key: nodeName  value: (color, adjList of names)
+        gr[l[0]] = ('white', l[1:])
+    return gr
+
 
 def dump(gr):
-  print("Input graph: nodeName (color, [adj list]) dictionary ")
-  for e in gr:
-    print(e, gr[e])
+    print("Input graph: nodeName (color, [adj list]) dictionary ")
+    for e in gr:
+        print(e, gr[e])
 
-def white(gr) :
-  """
-   paint all gr nodes white
-  """
-  for e in gr :
-    gr[e] = ('white',gr[e][1])
-    
 
-      
+def white(gr):
+    """
+     paint all gr nodes white
+    """
+    for e in gr:
+        gr[e] = ('white', gr[e][1])
+
+
 '''
   return bfs queue with (node, distance) pairs
 '''
-def bfs(gr,q):
-  """  
-  breadth first search gr from r
-  """
-  seen = {}
-  while q:
-    node, distance = q.pop(0)
-    if node not in seen:
-      seen[node] = distance
-      for child in gr[node][1]:
-        q.append((child, distance + 1))
-  return [(node, distance) for node, distance in seen.items()]
+
+
+def bfs(gr, q):
+    """  
+    breadth first search gr from r
+    """
+    seen = {}
+    while q:
+        node, distance = q.pop(0)
+        if node not in seen:
+            seen[node] = distance
+            for child in gr[node][1]:
+                q.append((child, distance + 1))
+    return [(node, distance) for node, distance in seen.items()]
+
 
 '''
   return boolean: True gr bfrom r is cyclic, False otherwise
 '''
-def dfs(gr,r):
-  """  
-   depth first search gr from r for cycles
-   """
-  stack = [(r, None)]
-  seen = {}
-  while stack:
-    node, parent = stack.pop()
-    if node not in seen:
-      seen[node] = parent
-      for child in gr[node][1]:
-        if child not in seen:
-          stack.append((child, node))
-        elif child != parent:
-          cyclic = True
-          return True
-    return False
+
+
+def dfs(gr, r):
+    """  
+     depth first search gr from r for cycles
+     """
+    stack = [(r, None)]
+    seen = {}
+    while stack:
+        node, parent = stack.pop()
+        if node not in seen:
+            seen[node] = parent
+            for child in gr[node][1]:
+                if child not in seen:
+                    stack.append((child, node))
+                elif child != parent:
+                    cyclic = True
+                    return True
+        return False
+
 
 if __name__ == "__main__":
-  print(sys.argv[0])
-  gr = read(sys.argv[1])  # file name
-  root = sys.argv[2]      # root node
-  db = len(sys.argv)>3     # debug?
-  
-  print("BFS")
-  dump(gr)
-  print("Root node:", root)
-  gr[root] = ('black',gr[root][1])
-  q = bfs(gr,[(root,0)])
-  print("BFS queue: (node name, distance) pairs")
-  print(q)
-  print("END BFS")
-  print()
+    print(sys.argv[0])
+    gr = read(sys.argv[1])  # file name
+    root = sys.argv[2]      # root node
+    db = len(sys.argv) > 3     # debug?
 
+    print("BFS")
+    dump(gr)
+    print("Root node:", root)
+    gr[root] = ('black', gr[root][1])
+    q = bfs(gr, [(root, 0)])
+    print("BFS queue: (node name, distance) pairs")
+    print(q)
+    print("END BFS")
+    print()
 
-  print("DFS")
-  white(gr)
-  dump(gr)
-  print("Root node", root)
-  dfsInit(gr,root)
-  if cyclic:
-    print("graph with root",root,"is cyclic")
-  else:
-    print("graph with root",root,"is not cyclic")
-  print("END DFS")
+    print("DFS")
+    white(gr)
+    dump(gr)
+    print("Root node", root)
+    dfsInit(gr, root)
+    if cyclic:
+        print("graph with root", root, "is cyclic")
+    else:
+        print("graph with root", root, "is not cyclic")
+    print("END DFS")

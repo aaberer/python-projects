@@ -1,8 +1,9 @@
 import sys
 
-coins = [1,5,10,25]
+coins = [1, 5, 10, 25]
 
-def partitions(n,k):
+
+def partitions(n, k):
     dp = [[0 for _ in range(k+1)] for _ in range(n+1)]
     for i in range(n+1):
         dp[i][0] = 0
@@ -17,7 +18,7 @@ def partitions(n,k):
     return dp[n][k]
 # """
 #     pre 0<k<=n, n>0
-#     post return the number of ways k partitions 
+#     post return the number of ways k partitions
 #           can be formed out of n distinct elements
 #    """
    # if k==n or k==1 :
@@ -30,8 +31,8 @@ def partitions(n,k):
    #   or
    #     let a form its own partition, and
    #     form k-1 partitions with the rest
-    
- 
+
+
 def mkCh(a, c):
     if a == 0:
         return 1
@@ -46,16 +47,15 @@ def mkCh(a, c):
 
 
 if __name__ == "__main__":
-  # partititions
-  d = len(sys.argv)>3
-  n = int(sys.argv[1])
-  k = int(sys.argv[2])
-  p = partitions(n,k)
-  print("n:",n,"k:",k, "partitions:",p)
-  
-  # make change
-  c = len(coins)-1
-  a = 10*n+k
-  ways = mkCh(a,c)
-  print("amount:", a, "coins:", coins, "ways:", ways)
+    # partititions
+    d = len(sys.argv) > 3
+    n = int(sys.argv[1])
+    k = int(sys.argv[2])
+    p = partitions(n, k)
+    print("n:", n, "k:", k, "partitions:", p)
 
+    # make change
+    c = len(coins)-1
+    a = 10*n+k
+    ways = mkCh(a, c)
+    print("amount:", a, "coins:", coins, "ways:", ways)

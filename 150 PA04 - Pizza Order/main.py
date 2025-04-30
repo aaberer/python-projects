@@ -1,7 +1,7 @@
 ##
-##  Lab 05 - Pizza Order
+# Lab 05 - Pizza Order
 ##
-##  Andrew Aberer | aaberer@colostate.edu
+# Andrew Aberer | aaberer@colostate.edu
 
 # STEP 1
 def get_topping_one(pizza_order):
@@ -56,9 +56,9 @@ def run():
     print(too_much_cheese("cheese, pepperoni, FF"))
     print(too_much_cheese("olives, pepperoni, FF"))
     print(full_order('onions, pineapple, 11'))
-    #create your own tests here
-    return # make sure this line is last
+    # create your own tests here
+    return  # make sure this line is last
+
 
 if __name__ == "__main__":
     run()
-    

@@ -39,77 +39,94 @@ your code.
 import sys
 
 # p implies q
+
+
 def implies(p, q):
-    return not(p) or q
+    return not (p) or q
 
 # not p implies not q
-def npIMPnq(p,q):
-    return not(not(p) and q)
+
+
+def npIMPnq(p, q):
+    return not (not (p) and q)
 
 # not q implies not p
-def nqIMPnp(p,q):
-    return not(not(q) and p)
+
+
+def nqIMPnp(p, q):
+    return not (not (q) and p)
 
 # p if and only if q
 # equivalent to:  (p implies q) and (q implies p)
+
+
 def iff(p, q):
-    return (not(p) or q) and (not(q) or p)
+    return (not (p) or q) and (not (q) or p)
 
 # not ( p and q )
+
+
 def nand(p, q):
-    return not(p and q)
+    return not (p and q)
 
 # not p and not q
-def npANDnq(p,q):
-    return not(p) and not(q)
+
+
+def npANDnq(p, q):
+    return not (p) and not (q)
 
 # not ( p or q)
+
+
 def nor(p, q):
-    return not(p or q)
+    return not (p or q)
 
 # not p or not q
-def npORnq(p,q):
-    return not(p) or not(q)
 
-# The function make_tt_ins(n) will create all combination of Boolean values for n variables, 
+
+def npORnq(p, q):
+    return not (p) or not (q)
+
+# The function make_tt_ins(n) will create all combination of Boolean values for n variables,
 # which is the input that needs to be provided for a truth table with n variables.
+
+
 def make_tt_ins(n):
-    if(n == 0):
+    if (n == 0):
         return [[]]
     else:
         return [row + [combo] for row in make_tt_ins(n-1) for combo in [True, False]]
 
 
-#provided
+# provided
 def run(f):
-  print("  True,True  : ", f(True,True)) 
-  print("  True,False : ", f(True,False))  
-  print("  False,True : ", f(False,True))
-  print("  False,False: ", f(False,False))
-  print()
-      
-#provided
-if __name__ == "__main__":
-  print("program", sys.argv[0])
-  f1 = sys.argv[1]
-  print(f1)
-  if(f1 == "implies"):
-    run(implies)
-  if(f1 == "iff"):
-    run(iff)
-  if(f1 == "npIMPnq"):
-    run(npIMPnq)
-  if(f1 == "nqIMPnp"):
-    run(nqIMPnp)
-  if(f1 == "nand"):
-    run(nand)
-  if(f1 == "nor"):
-    run(nor)
-  if(f1 == "npANDnq"):
-    run(npANDnq)
-  if(f1 == "npORnq"):
-    run(npORnq)
-  if(f1 == "tt"):
-    print(make_tt_ins(int(sys.argv[2])))
-    
+    print("  True,True  : ", f(True, True))
+    print("  True,False : ", f(True, False))
+    print("  False,True : ", f(False, True))
+    print("  False,False: ", f(False, False))
+    print()
 
+
+# provided
+if __name__ == "__main__":
+    print("program", sys.argv[0])
+    f1 = sys.argv[1]
+    print(f1)
+    if (f1 == "implies"):
+        run(implies)
+    if (f1 == "iff"):
+        run(iff)
+    if (f1 == "npIMPnq"):
+        run(npIMPnq)
+    if (f1 == "nqIMPnp"):
+        run(nqIMPnp)
+    if (f1 == "nand"):
+        run(nand)
+    if (f1 == "nor"):
+        run(nor)
+    if (f1 == "npANDnq"):
+        run(npANDnq)
+    if (f1 == "npORnq"):
+        run(npORnq)
+    if (f1 == "tt"):
+        print(make_tt_ins(int(sys.argv[2])))
