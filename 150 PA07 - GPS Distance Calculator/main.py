@@ -1,18 +1,20 @@
 #   Andrew Aberer | aaberer@colostate.edu
-#https://www.cs.colostate.edu/~cs150b/labs/lab08
+# https://www.cs.colostate.edu/~cs150b/labs/lab08
 # -*- coding: utf-8 -*-
 from math import *
 import csv
 
+
 def read_file(file):
-    lst = [] 
+    lst = []
     with open(file, 'r') as myfile:
         csv_reader = csv.reader(myfile)
         for row in csv_reader:
             print(row)
             lst.append(row)
-    return lst 
-    
+    return lst
+
+
 def get_city_info(data, city_name):
     counter = 0
     store_fc = 0
@@ -24,11 +26,14 @@ def get_city_info(data, city_name):
         counter += 1
     return data[store_fc]
 
+
 def get_city_latitude(city_info):
     return city_info[1]
 
+
 def get_city_longitude(city_info):
     return city_info[2]
+
 
 def convert_degrees_to_decimals(str_value):
     degree_char = str_value.find('°')
@@ -44,8 +49,8 @@ def convert_degrees_to_decimals(str_value):
         direction = 1
     if direction_char == 'S' or direction_char == 'W':
         direction = -1
-    decimal_value = degree + (minutes / 60) + (seconds / 3600) * direction 
-    return decimal_value 
+    decimal_value = degree + (minutes / 60) + (seconds / 3600) * direction
+    return decimal_value
 
 
 def distance_between(data, city1, city2):
@@ -61,10 +66,12 @@ def distance_between(data, city1, city2):
     lat2 = convert_degrees_to_decimals(city2_latitude)
     lon2 = convert_degrees_to_decimals(city2_longitude)
 
-    EARTH_RADIUS = 3961 # radius of the earth at 39 degrees latitude in miles - to use Kilometers: 6373
+    # radius of the earth at 39 degrees latitude in miles - to use Kilometers: 6373
+    EARTH_RADIUS = 3961
     dlat = radians(lat2 - lat1)
     dlon = radians(lon2 - lon1)
-    a = pow(sin(dlat/2), 2) + cos(radians(lat1)) * cos(radians(lat2)) * pow(sin(dlon/2), 2)
+    a = pow(sin(dlat/2), 2) + cos(radians(lat1)) * \
+        cos(radians(lat2)) * pow(sin(dlon/2), 2)
     c = 2 * atan2(sqrt(a), sqrt(1-a))
     return EARTH_RADIUS * c
 
@@ -72,8 +79,7 @@ def distance_between(data, city1, city2):
 def run_tests():
     data = read_file('cities.csv')
     print("TESTING", data)
-    return True ## change to True before submitting for grading, and run the application! 
-
+    return True  # change to True before submitting for grading, and run the application!
 
 
 if __name__ == '__main__':
@@ -85,6 +91,6 @@ if __name__ == '__main__':
         city1 = input('Enter the first city: ')
         city2 = input('Enter the second city: ')
         dist = distance_between(data, city1, city2)
-        print('The distance between {} and {} is {:.2f} miles!'.format(city1, city2, dist))
+        print('The distance between {} and {} is {:.2f} miles!'.format(
+            city1, city2, dist))
         cont = input('Run again (y/n)? ')[:1].lower()
-

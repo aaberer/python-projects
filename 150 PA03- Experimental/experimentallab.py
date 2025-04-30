@@ -35,7 +35,7 @@ A few things to help you out, remember you can access a specific location in a s
 
 print("hello"[0])  # prints h to the screen
 
-## or better done
+# or better done
 greeting = "hello"
 print(greeting[0])  # prints h to the screen
 print(greeting[1])  # prints e to the screen
@@ -52,12 +52,12 @@ while loc < len(greeting):
 
 Now go ahead and build the loop below! """
 
-greeting = "aloha" #you should change this for testing
+greeting = "aloha"  # you should change this for testing
 loc = 0
 while loc < len(greeting):
     print(greeting[loc])
     loc += 1
-## put your loop here, and test it using the arrow to the side
+# put your loop here, and test it using the arrow to the side
 
 """## Task 2 - Building a reverse string
 
@@ -76,7 +76,7 @@ while exloc >= 0:
     exloc -= 1
 print(example_ans)
 
-# now your turn! 
+# now your turn!
 
 greeting = "aloha"
 ans = ""
@@ -85,7 +85,7 @@ while loc > -1:
     print(greeting[loc])
     loc -= 1
 
-## add your loop here - you want answer to eventually be ahola or the reverse of whatever word greeting is set to!
+# add your loop here - you want answer to eventually be ahola or the reverse of whatever word greeting is set to!
 
 
 print(ans)
@@ -106,8 +106,11 @@ When you are comfortable, take the code you wrote above, and make it the primary
 """
 
 # we put in the signature for you, the rest you need to work on
+
+
 def reverse_str(msg):
     return msg[::-1]
+
 
 print(reverse_str("aloha"))
 print(reverse_str("hello"))

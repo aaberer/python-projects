@@ -1,11 +1,11 @@
 ##
-## Files and CSV lab for CS 150B.
-## https://www.cs.colostate.edu/~cs150b/labs/lab07
-## In this lab, you will get practice opening files and using the data in those files
+# Files and CSV lab for CS 150B.
+# https://www.cs.colostate.edu/~cs150b/labs/lab07
+# In this lab, you will get practice opening files and using the data in those files
 ##
-## @Andrew Aberer
-##         aaberer@colostate.edu
-## @version 202102
+# @Andrew Aberer
+# aaberer@colostate.edu
+# @version 202102
 
 import csv
 
@@ -19,11 +19,13 @@ def file_addition(filename):
     return line1 + line2
 
 # Step 2
+
+
 def line_counter(filename):
-   with open(filename) as t:
-    file = t.readlines()
-    total = len(file)
-    return total
+    with open(filename) as t:
+        file = t.readlines()
+        total = len(file)
+        return total
 
 
 # Step 3
@@ -44,7 +46,8 @@ def get_filtered_CSV(filename, filter_by):
     lst = []
     counter = 0
     with open(filename, 'r') as myfile:
-        csv_reader = csv.reader(myfile) #remember import csv at the top of the file
+        # remember import csv at the top of the file
+        csv_reader = csv.reader(myfile)
         for row in csv_reader:
             print(row)
             if filter_by == row[0]:

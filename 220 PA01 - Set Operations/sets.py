@@ -161,7 +161,6 @@ def run():
     new_set2 = [7, 8, 6, 11, 20, 7, 1]
     print(is_proper_subset(new_set1, new_set2))
 
+
 if __name__ == '__main__':
     run()
-
-

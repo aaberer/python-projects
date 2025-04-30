@@ -1,13 +1,14 @@
 from random import *
 
 ##
-## Magic 8 Ball lab for CS 150B.
+# Magic 8 Ball lab for CS 150B.
 ##
-## In this lab, you will work with branching statements.
-## 
-## @author Andrew Aberer
-##         aaberer@colostate.edu
-## @version 202102
+# In this lab, you will work with branching statements.
+##
+# @author Andrew Aberer
+# aaberer@colostate.edu
+# @version 202102
+
 
 def get_positive_answer(answer):
     ans = "You may rely on it."
@@ -16,11 +17,12 @@ def get_positive_answer(answer):
     elif answer == 1:
         ans = "Signs point to yes."
     elif answer == 2:
-        ans ="Outlook good."
+        ans = "Outlook good."
     elif answer == 3:
         ans = "Without a doubt."
     return ans
-    
+
+
 def get_negative_answer(answer):
     ans = ""
     if answer == 0:
@@ -28,12 +30,13 @@ def get_negative_answer(answer):
     elif answer == 1:
         ans = "My reply is no."
     elif answer == 2:
-        ans ="My sources say no."
+        ans = "My sources say no."
     elif answer == 3:
         ans = "Outlook not so good."
     elif answer >= 4:
         ans = "Very doubtful."
     return ans
+
 
 def get_no_answer(answer):
     ans = "You may rely on it."
@@ -47,7 +50,8 @@ def get_no_answer(answer):
         ans = "Cannot predict now."
     elif answer >= 4:
         ans = "Concentrate and ask again."
-    return  ans
+    return ans
+
 
 def getAnswer(category, answer):
     ans = None
@@ -59,12 +63,14 @@ def getAnswer(category, answer):
         ans = get_positive_answer(answer)
     return ans
 
+
 def printSplash():
     print('88888888888888888888')
     print('8   Magic 8 Ball   8')
     print('8    Ask away      8')
     print('8  Know everything 8')
     print('88888888888888888888')
+
 
 def run():
     cat = randint(0, 100)
@@ -77,9 +83,9 @@ def run():
         print('Thank you for playing!')
         return
     print('\nAnd the answer is...\n')
-    run() 
+    run()
+
 
 if __name__ == '__main__':
     printSplash()
     run()
-

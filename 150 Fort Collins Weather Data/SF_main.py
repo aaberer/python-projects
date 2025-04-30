@@ -1,9 +1,10 @@
-#@Andrew Aberer
-#aaberer@colostate.edu
+# @Andrew Aberer
+# aaberer@colostate.edu
 
 import csv
 date_index = 0
 temp_index = 1
+
 
 def csv_reader(filename):
     file_list = []
@@ -11,7 +12,7 @@ def csv_reader(filename):
         csv_reader = csv.reader(text)
         for row in csv_reader:
             file_list.append(row)
-        file_list.pop(0)    
+        file_list.pop(0)
     return file_list
 
 # def remove_t(list):
@@ -21,9 +22,11 @@ def csv_reader(filename):
 #         print(row[0][:row[0].index('T')])
 #     return new_list
 
+
 def client_input():
     filter = input('Please enter a filter: ')
     return filter
+
 
 def average_temperature(weather, filter):
     counter = 0
@@ -39,12 +42,14 @@ def average_temperature(weather, filter):
         return 0
     return total_temp / counter
 
+
 def maximum_temperature(weather, filter):
     max_lst = []
     for val in weather:
         if filter in val[date_index]:
             max_lst.append(float(val[temp_index]))
     return max(max_lst)
+
 
 def minimum_temperature(weather, filter):
     min_lst = []
@@ -53,15 +58,20 @@ def minimum_temperature(weather, filter):
             min_lst.append(float(val[temp_index]))
     return min(min_lst)
 
+
 def run():
-    call_file = ('/Users/ham/Desktop/VSC Main/Fort Collins Weather Data/SF_Temperatures.csv')
+    call_file = (
+        '/Users/ham/Desktop/VSC Main/Fort Collins Weather Data/SF_Temperatures.csv')
     file = csv_reader(call_file)
-    #file_new = remove_t(file)
+    # file_new = remove_t(file)
     input_var = client_input()
-    print(f'Average Temperature for {input_var}: {average_temperature(file, input_var):.2f}')
-    print(f'Maximum Temperature for {input_var}: {maximum_temperature(file, input_var):.2f}')
-    print(f'Minimum Temperature for {input_var}: {minimum_temperature(file, input_var):.2f}')
-    
-   
+    print(
+        f'Average Temperature for {input_var}: {average_temperature(file, input_var):.2f}')
+    print(
+        f'Maximum Temperature for {input_var}: {maximum_temperature(file, input_var):.2f}')
+    print(
+        f'Minimum Temperature for {input_var}: {minimum_temperature(file, input_var):.2f}')
+
+
 if __name__ == '__main__':
     run()
